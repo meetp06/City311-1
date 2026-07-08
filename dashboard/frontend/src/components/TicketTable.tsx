@@ -71,7 +71,7 @@ export default function TicketTable({ tickets, highlightId }: { tickets: Ticket[
                 <TableCell className="max-w-[220px] truncate text-muted-foreground">{t.location}</TableCell>
                 <TableCell><Badge variant={priorityVariant(t.priority)}>{t.priority}</Badge></TableCell>
                 <TableCell><Badge variant={statusVariant(t.status)}>{t.status.replace("_", " ")}</Badge></TableCell>
-                <TableCell className="text-xs text-muted-foreground">{formatTime(t.created_at)}</TableCell>
+                <TableCell className="text-xs text-muted-foreground">{formatTime(t.created_at || "")}</TableCell>
               </motion.tr>
             ))}
             {tickets.length === 0 && (

@@ -61,7 +61,7 @@ export default function ActiveCallPanel({ call }: { call: Call | null }) {
                 <span className="text-foreground">{call.intent}</span>
               </Field>
               <Field label="Sentiment">
-                <Badge variant={sentimentVariant(call.sentiment)}>{call.sentiment}</Badge>
+                <Badge variant={sentimentVariant(call.sentiment || "")}>{call.sentiment}</Badge>
               </Field>
               <Field label="Duration">
                 <span className="tabular-nums">{mins}:{secs}</span>
